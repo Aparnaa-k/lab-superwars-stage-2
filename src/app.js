@@ -30,7 +30,7 @@ const initPlayers = (players) => {
     for (let i = 0; i < players.length; i++) {
       const player = {};
       player.name = players[i];
-      player.strength = 100;
+      player.strength = getRandomStrength();
       player.image = "images/super-" + (i + 1) + ".png"; 
       player.type = i % 2 === 0 ? "hero" : "villain"; 
       detailedPlayers.push(player);
