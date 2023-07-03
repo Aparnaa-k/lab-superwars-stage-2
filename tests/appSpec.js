@@ -69,11 +69,10 @@ describe("Creating players", function () {
 
 describe("Getting random strength", function () {
   it("should return a number", function () {
-    let expectedType = Number;
 
     let strength = getRandomStrength();
 
-    expect(strength).toBeInstanceOf(expectedType);
+    expect(strength).toBeInstanceOf(Number);
   });
 
   it("should return a 0 < number <= 100", function () {
@@ -86,8 +85,7 @@ describe("Getting random strength", function () {
 });
 
 describe("Building player blocks", function () {
-  it("should return a template for the players\
-    ", function () {
+  it("should return a template for the players", function () {
     let players = initPlayers(TEST_PLAYERS);
     let fragment = buildPlayers(players, 'hero');
     fragment = fragment.replace(/\s/g, "");
@@ -97,7 +95,8 @@ describe("Building player blocks", function () {
         <div class="name">${players[0].name}</div>
         <div class="strength">${players[0].strength}</div>
     </div>`;
-    expectedFragment = expectedFragment.replace(/\s/g, "");
+    
+    expectedFragment = fragment.replace(/\s/g, "");
 
     expect(fragment).toBe(expectedFragment);
   })
